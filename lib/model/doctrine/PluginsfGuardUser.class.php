@@ -289,13 +289,5 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
       $this->_set('password', $v);
     }
   }
-
-  /**
-   * override save
-   */
-  public function save(Doctrine_Connection $conn = null)
-  {
-    $this->username = 'username_$' . str_replace(array('username_$', '$_username'), '', $this->username) . '$_username';
-    parent::save($conn);
-  }
 }
+
